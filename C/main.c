@@ -1,8 +1,8 @@
 #include <stdio.h>
+#include "hamming/hamming.h"
 
 int main(void) {
-    const char *test = "test";
-    printf("%s\n", test);
+    printf("%d\n", compute("AATG", "AAA"));
 
     return 0;
 }
