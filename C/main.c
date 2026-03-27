@@ -1,8 +1,13 @@
 #include <stdio.h>
-#include "space_age/space_age.h"
+#include "rna_transcription/rna_transcription.h"
 
 int main(void) {
-    printf("%f\n", age(EARTH, 1000000000));
+    const char *dna = "ACGTG";
+    char *rna = to_rna(dna);
+
+    printf("%s\n", rna);
+
+    free(rna);
 
     return 0;
 }
