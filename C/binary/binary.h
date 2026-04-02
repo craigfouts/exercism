@@ -3,7 +3,9 @@
 
 #define INVALID -1
 
-#include "stdio.h"
+int len(const char *input);
+
+int pwr(int input, int power);
 
 int convert(const char *input);
 
