@@ -1,13 +1,7 @@
-#include <stdio.h>
-#include "rna_transcription/rna_transcription.h"
+#include "binary/binary.h"
 
 int main(void) {
-    const char *dna = "ACGTG";
-    char *rna = to_rna(dna);
-
-    printf("%s\n", rna);
-
-    free(rna);
+    convert("test");
 
     return 0;
 }

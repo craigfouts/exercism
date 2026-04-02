@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -g -Wall -Wextra -pedantic -std=c11
+CFLAGS = -g -Wall -Wextra -pedantic -std=c23
 SRC = $(wildcard *.c) $(wildcard **/*.c)
 OBJ = $(SRC:%.c=%.o)
 LIB = $(addprefix -l,)
