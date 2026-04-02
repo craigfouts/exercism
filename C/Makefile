@@ -1,15 +1,21 @@
-CC = gcc
-CFLAGS = -g -Wall -Wextra -pedantic -std=c23
-SRC = $(wildcard *.c) $(wildcard **/*.c)
-OBJ = $(SRC:%.c=%.o)
-LIB = $(addprefix -l,)
-EXE = out
+CC := cc
+FLG := -std=c23 -Wall -Wextra -pedantic
+SRC := $(wildcard *.c) $(wildcard **/*.c)
+OBJ := $(SRC:%.c=%.o)
+OUT := out
+CLN := $(OBJ) $(OUT)
 
-$(EXE): $(OBJ)
-	$(CC) -o $@ $^ $(LIB)
+default: all
 
-%.o: %.c 
-	$(CC) $(CFLAGS) -c -o $@ $<
+.PHONY: all
+all: $(OUT)
 
+.PHONY: clean
 clean:
-	rm -f $(OBJ) $(EXE)
+	@rm -f $(CLN)
+
+$(OUT): $(OBJ)
+	@$(CC) -o $@ $^ $(FLG)
+
+%.o: %.c*
+	@$(CC) -o $@ -c $< $(FLG)
