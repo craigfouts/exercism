@@ -1,8 +1,11 @@
-#include "binary/binary.h"
+#include "eliuds_eggs/eliuds_eggs.h"
 #include "stdio.h"
 
 int main(void) {
-    printf("%d\n", convert("101"));
+    unsigned int num = 89;
+
+    printf("%d\n", egg_count(num));
+    printf("%d\n", num);
 
     return 0;
 }
